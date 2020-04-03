@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlkalineThunder.Nucleus;
+using ShiftOS.Screens;
+using System;
 
 namespace ShiftOS
 {
@@ -6,8 +8,17 @@ namespace ShiftOS
     {
         static void Main(string[] args)
         {
-            using (var nucleus = new AlkalineThunder.Nucleus.GameLoop())
-                nucleus.Run();
+            GameLoop.GameReady += GameLoop_GameReady; ;
+
+            using(var game = new GameLoop())
+            {
+                game.Run();
+            }
+        }
+
+        private static void GameLoop_GameReady(object sender, EventArgs e)
+        {
+            GameLoop.Instance.ScreenManager.AddScreen<DesktopScreen>();
         }
     }
 }
