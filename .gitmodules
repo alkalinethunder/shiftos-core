@@ -1,0 +1,3 @@
+[submodule "Ladouceur"]
+	path = Ladouceur
+	url = https://github.com/alkalinethunder/Ladouceur

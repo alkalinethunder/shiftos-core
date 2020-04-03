@@ -6,7 +6,8 @@ namespace ShiftOS
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (var nucleus = new AlkalineThunder.Nucleus.GameLoop())
+                nucleus.Run();
         }
     }
 }
